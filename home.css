@@ -1,0 +1,294 @@
+:root {
+    --primary-red: #940404; /* Vermelho vibrante */
+    --secondary-red: #940404; /* Vermelho suave */
+    --dark-charcoal: #2D3436; /* Cor neutra escura */
+    --light-beige: #d9d9d9; /* Fundo claro */
+    --accent-orange: #cacaca; /* Destaque laranja */
+    --text-dark: #2D3436;
+    --text-light: #FFFFFF;
+    --dark-light: #f2f2f2;
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--light-beige);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navbar Moderna */
+.navbar {
+    background: var(--dark-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 15px rgba(45, 52, 54, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand img.logo {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem !important;
+    margin: 0 0.5rem;
+    border-radius: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-red) !important;
+    font-weight: 600;
+}
+
+/* Hero Section Atualizada */
+.hero-section {
+    padding: 160px 0 100px;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--secondary-red) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: var(--text-light);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-section .carousel {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border: 3px solid var(--text-light);
+}
+
+.hero-section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+}
+
+.hero-section .fa-check {
+    color: var(--accent-orange);
+    font-size: 1.25rem;
+}
+
+/* Seção Serviços */
+#servicos {
+    padding: 6rem 0;
+    background: var(--dark-light);
+}
+
+#servicos .card {
+    border: none;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: var(--text-light);
+    position: relative;
+}
+
+#servicos .card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#servicos .card:hover::after {
+    transform: scaleX(1);
+}
+
+#servicos .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#servicos .card-title {
+    color: var(--dark-charcoal);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Seção Produtos */
+#produtos {
+    padding: 6rem 0;
+    background: var(--light-beige);
+}
+
+#produtos .card {
+    border: 5px solid rgba(62, 58, 58, 0.1);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#produtos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+#produtos .card-img-top {
+    height: 250px;
+    object-fit: contain;
+    padding: 1.5rem;
+    background: var(--text-light);
+}
+
+#produtos .card-body {
+    background: var(--text-light);
+}
+
+/* Seção Parceiros */
+#parceiros {
+    padding: 6rem 0;
+    background: var(--dark-light);
+}
+
+#parceiros .carousel-item {
+    padding: 2rem;
+}
+
+.partner-logo {
+    height: 100px;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Apenas anima transformação e opacidade */
+    padding: 1rem;
+}
+
+.partner-logo:hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+
+/* Seção Contato Moderna */
+.contact-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--dark-charcoal) 0%, #2D3436 100%);
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.contact-section i {
+    font-size: 2rem;
+    color: var(--primary-red);
+    background: rgba(255, 255, 255, 0.9);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer Atualizado */
+.custom-footer {
+    background: var(--dark-charcoal);
+    padding: 3rem 0;
+    color: var(--text-light);
+}
+
+.custom-footer a {
+    color: var(--primary-red);
+    transition: color 0.3s ease;
+}
+
+.custom-footer a:hover {
+    color: var(--accent-orange);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .navbar-nav {
+        background: var(--text-light);
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 0 60px;
+    }
+    
+    .card-img-top {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-item {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+}
